@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\obj\\Debug\\net7.0\\build-gz\\ZVdbPTFm.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\obj\\Debug\\net7.0\\scopedcss\\bundle\\NetkinetixEvents.styles.css",
+      "PackagePath": "staticwebassets\\NetkinetixEvents.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\obj\\Debug\\net7.0\\service-worker-assets.js",
+      "PackagePath": "staticwebassets\\service-worker-assets.js"
+    },
+    {
+      "Id": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\obj\\Debug\\net7.0\\service-worker\\service-worker.published.js",
+      "PackagePath": "staticwebassets\\service-worker.js"
+    },
+    {
+      "Id": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\wwwroot\\icon-512.png",
+      "PackagePath": "staticwebassets\\icon-512.png"
+    },
+    {
+      "Id": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\wwwroot\\manifest.json",
+      "PackagePath": "staticwebassets\\manifest.json"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.NetkinetixEvents.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.NetkinetixEvents.props",
+      "PackagePath": "build\\NetkinetixEvents.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.NetkinetixEvents.props",
+      "PackagePath": "buildMultiTargeting\\NetkinetixEvents.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.NetkinetixEvents.props",
+      "PackagePath": "buildTransitive\\NetkinetixEvents.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
