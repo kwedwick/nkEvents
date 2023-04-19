@@ -38,12 +38,27 @@ namespace NetkinetixEvents.Services
             }
         }
 
-        public Task<SiteEvent> GetOneSiteEvent(int seId)
+        public async Task<SiteEvent> GetOneSiteEvent(int seId)
+        {
+            var result = await _http.GetFromJsonAsync<SiteEvent>($"https://nkeventsapi.netkinetix.com/SiteEvent/GetByID/{seId}");
+            if (result != null)
+            {
+                Console.WriteLine(result);
+                return result;
+                
+            }
+            else
+            {
+                return new SiteEvent { };
+            }
+        }
+
+        public Task UpdateSiteEvent(SiteEvent seEvent)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateSiteEvent(SiteEvent seEvent)
+        public Task SearchEvents(SiteEvent seEvent)
         {
             throw new NotImplementedException();
         }

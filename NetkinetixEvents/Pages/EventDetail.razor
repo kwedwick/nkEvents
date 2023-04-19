@@ -1,0 +1,60 @@
+﻿@page "/event"
+@page "/event/{SeId:int}"
+@inject ISiteEventService SiteEventService
+@inject NavigationManager NavigationManager
+
+@if (SeId == null && !seEvent.SeActive)
+{
+    <PageTitle>No event found</PageTitle>
+    <BSCard CardType="CardType.Card">
+    <BSCard CardType="CardType.Text">No Event Found :( </BSCard>
+    <BSButton Color="BSColor.Primary" OnClick=BackToEventList>Go Back To Event List</BSButton>
+    </BSCard>
+}
+else if (SeId == null || !seEvent.SeActive)
+{
+    <PageTitle>No event found</PageTitle>
+    <BSCard CardType="CardType.Card">
+        <BSCard CardType="CardType.Text">No Event Found :( </BSCard>
+        <BSButton Color="BSColor.Primary" OnClick=BackToEventList>Go Back To Event List</BSButton>
+    </BSCard>
+}
+else
+{
+    <BSCard CardType="CardType.Card">
+        <BSCard CardType="CardType.Title">@seEvent.SeTitle</BSCard>
+        <BSCard CardType="CardType.Text">
+            @seEvent.SeDescription
+        </BSCard>
+        <BSCard CardType="CardType.Text">@seEvent.SeLocation</BSCard>
+        <BSCard CardType="CardType.Text">Start Date: @seEvent.SeStartDate.ToString("MM/dd/yyyy")</BSCard>
+        <BSCard CardType="CardType.Text">End Date: @seEvent.SeEndDate?.ToString("MM/dd/yyyy")</BSCard>
+        <BSButton Class="btn-outline-secondary" href="@seEvent.SeURL">Visit Event Website</BSButton>
+        <BSButton Class="btn-outline-primary" OnClick=BackToEventList>Go Back To Event List</BSButton>
+    </BSCard>
+}
+
+
+@code {
+    [Parameter]
+    public int? SeId { get; set; }
+
+    SiteEvent seEvent = new SiteEvent { };
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if(SeId != null)
+        {
+            seEvent = await SiteEventService.GetOneSiteEvent((int)SeId);
+            if (seEvent == null)
+            {
+                seEvent.SeActive = false;
+            }
+        }
+    }
+
+    void BackToEventList()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

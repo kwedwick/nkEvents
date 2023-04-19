@@ -1,3 +1,4 @@
+global using NetkinetixEvents.Models;
 using BlazorStrap;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;

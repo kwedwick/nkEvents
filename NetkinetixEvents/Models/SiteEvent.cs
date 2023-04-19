@@ -10,7 +10,9 @@ namespace NetkinetixEvents.Models
         [Range(1,128, ErrorMessage ="Title can only be up to 128 characters")]
         public string SeTitle { get; set; }
         [Required]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime SeStartDate { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime? SeEndDate { get; set;}
         [Range(0, 128, ErrorMessage = "Title can only be up to 128 characters")]
         public string? SeLocation { get; set; }

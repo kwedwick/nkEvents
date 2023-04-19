@@ -12,5 +12,7 @@ namespace NetkinetixEvents.Services
         Task UpdateSiteEvent(SiteEvent seEvent);
         Task DeleteSiteEvent(int seId);
 
+        Task SearchEvents(SiteEvent seEvent);
+
     }
 }
