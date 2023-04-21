@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9IMSkrj1SQvrd/y/g3aDG9I/kktLBLJQH8vRoULiRWc=",
+  "Hash": "+R8vjx3AqQby+lt4y3Ap9v+qOYN1WCy765AL+5uBm4M=",
   "Source": "NetkinetixEvents",
   "BasePath": "/",
   "Mode": "Root",
@@ -831,6 +831,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\kwedw\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.5\\runtimes\\browser-wasm\\lib\\net7.0\\netstandard.dll"
+    },
+    {
+      "Identity": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Newtonsoft.Json.dll",
+      "SourceId": "NetkinetixEvents",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Newtonsoft.Json.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\kwedw\\.nuget\\packages\\newtonsoft.json\\13.0.3\\lib\\net6.0\\Newtonsoft.Json.dll"
     },
     {
       "Identity": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.AppContext.dll",
@@ -3908,6 +3925,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.IO.MemoryMappedFiles.dll"
+    },
+    {
+      "Identity": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\obj\\Debug\\net7.0\\build-gz\\7aHWlidK.gz",
+      "SourceId": "NetkinetixEvents",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Newtonsoft.Json.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Newtonsoft.Json.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Newtonsoft.Json.dll"
     },
     {
       "Identity": "C:\\Users\\kwedw\\OneDrive\\Desktop\\Netkinetix\\NetkinetixEvents\\NetkinetixEvents\\obj\\Debug\\net7.0\\build-gz\\7iTszFuO.gz",

@@ -1,0 +1,86 @@
+﻿@page "/modal"
+@page "/modal/{seId:int}"
+@inject ISiteEventService SiteEventService
+
+<BSButton Class="btn btn-success" Target="@counter">@btnText</BSButton>
+
+<BSModal IsCentered="true" DataId="@counter" HideOnValidSubmit="true">
+    <BSForm Model="seEvent" OnValidSubmit="@HandleSubmit">
+        <BSModalHeader>@btnText</BSModalHeader>
+        <BSModalContent>
+        <div>
+            <BSLabel for="title">Title</BSLabel>
+            <BSInput  id="title" @bind-Value="seEvent.seTitle" class="form-control"></BSInput>
+        </div>
+        <div>
+            <BSLabel for="description">Description</BSLabel>
+            <BSInput id="lastName" @bind-Value="seEvent.seDescription" class="form-control"></BSInput>
+        </div>
+        <div>
+            <BSLabel for="startDate">Start Date</BSLabel>
+            <BSInput id="startDate" InputType="InputType.Date" @bind-Value="seEvent.seStartDate" />
+        </div>
+        <div>
+            <BSLabel for="endDate">End Date</BSLabel>
+            <BSInput id="endDate" InputType="InputType.Date" @bind-Value="seEvent.seEndDate" />
+        </div>
+            <div>
+                <BSLabel for="location">Location</BSLabel>
+                <BSInput id="location" @bind-Value="seEvent.seLocation" class="form-control"></BSInput>
+            </div>
+            <div>
+                <BSLabel for="url">URL</BSLabel>
+                <BSInput id="url" @bind-Value="seEvent.seURL" class="form-control"></BSInput>
+            </div>
+            <div>
+                <BSInputCheckbox @bind-Value="seEvent.seURL" />
+                <BSLabel IsCheckLabel="true">Hide Event</BSLabel>
+            </div>
+        </BSModalContent>
+    </BSForm>
+    <BSModalFooter>
+        <BSButton Target="@counter">Cancel</BSButton>
+        <BSButton IsSubmit="true" Color="BSColor.Primary">@btnText</BSButton>
+    </BSModalFooter>
+</BSModal>
+
+
+@code {
+    [Parameter]
+    public int? seId { get; set; }
+    string btnText = string.Empty;
+    public string counter = "AddEditModal";
+
+    SiteEvent seEvent = new SiteEvent { };
+
+    protected override async Task OnInitializedAsync()
+    {
+        btnText = seId == null ? "Add New Event" : "Update Event";
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (seId != null)
+        {
+            counter += seId;
+            seEvent = await SiteEventService.GetOneSiteEvent((int)seId);
+            if (seEvent == null)
+            {
+                seEvent.seActive = true;
+            }
+        }
+    }
+
+    async Task HandleSubmit()
+    {
+        if (seId == null)
+        {
+            seEvent.seId = 0;
+            await SiteEventService.CreateSiteEvent(seEvent);
+        }
+        else
+        {
+            await SiteEventService.UpdateSiteEvent(seEvent);
+        }
+    }
+}

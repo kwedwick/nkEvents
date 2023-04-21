@@ -41,6 +41,7 @@ C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\NetkinetixEvents.dll
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\NetkinetixEvents.pdb
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\netstandard.dll
+C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\System.AppContext.dll
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\System.Buffers.dll
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\System.Collections.Concurrent.dll
@@ -222,6 +223,7 @@ C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\System.Configuration.dll.gz
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\System.Resources.Reader.dll.gz
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\System.IO.MemoryMappedFiles.dll.gz
+C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\System.Diagnostics.FileVersionInfo.dll.gz
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Json.dll.gz
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\wwwroot\_framework\System.Core.dll.gz
@@ -437,6 +439,7 @@ C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\Microsoft.JSInterop.dll
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\System.IO.Pipelines.dll
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\Microsoft.CSharp.dll
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\bin\Debug\net7.0\Microsoft.VisualBasic.Core.dll
@@ -644,6 +647,7 @@ C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\obj
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\obj\Debug\net7.0\build-gz\o3ZyvoPa.gz
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\obj\Debug\net7.0\build-gz\bG2hdIgX.gz
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\obj\Debug\net7.0\build-gz\1wYrTb4m.gz
+C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\obj\Debug\net7.0\build-gz\7aHWlidK.gz
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\obj\Debug\net7.0\build-gz\LKFir58N.gz
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\obj\Debug\net7.0\build-gz\hnfbT6vN.gz
 C:\Users\kwedw\OneDrive\Desktop\Netkinetix\NetkinetixEvents\NetkinetixEvents\obj\Debug\net7.0\build-gz\vSJzPfZI.gz

@@ -1,9 +1,9 @@
 ﻿@page "/event"
-@page "/event/{SeId:int}"
+@page "/event/{seId:int}"
 @inject ISiteEventService SiteEventService
 @inject NavigationManager NavigationManager
 
-@if (SeId == null && !seEvent.SeActive)
+@if (seId == null && !seEvent.seActive)
 {
     <PageTitle>No event found</PageTitle>
     <BSCard CardType="CardType.Card">
@@ -11,7 +11,7 @@
     <BSButton Color="BSColor.Primary" OnClick=BackToEventList>Go Back To Event List</BSButton>
     </BSCard>
 }
-else if (SeId == null || !seEvent.SeActive)
+else if (seId == null || !seEvent.seActive)
 {
     <PageTitle>No event found</PageTitle>
     <BSCard CardType="CardType.Card">
@@ -22,14 +22,14 @@ else if (SeId == null || !seEvent.SeActive)
 else
 {
     <BSCard CardType="CardType.Card">
-        <BSCard CardType="CardType.Title">@seEvent.SeTitle</BSCard>
+        <BSCard CardType="CardType.Title">@seEvent.seTitle</BSCard>
         <BSCard CardType="CardType.Text">
-            @seEvent.SeDescription
+            @seEvent.seDescription
         </BSCard>
-        <BSCard CardType="CardType.Text">@seEvent.SeLocation</BSCard>
-        <BSCard CardType="CardType.Text">Start Date: @seEvent.SeStartDate.ToString("MM/dd/yyyy")</BSCard>
-        <BSCard CardType="CardType.Text">End Date: @seEvent.SeEndDate?.ToString("MM/dd/yyyy")</BSCard>
-        <BSButton Class="btn-outline-secondary" href="@seEvent.SeURL">Visit Event Website</BSButton>
+        <BSCard CardType="CardType.Text">@seEvent.seLocation</BSCard>
+        <BSCard CardType="CardType.Text">Start Date: @seEvent.seStartDate.ToString("MM/dd/yyyy")</BSCard>
+        <BSCard CardType="CardType.Text">End Date: @seEvent.seEndDate?.ToString("MM/dd/yyyy")</BSCard>
+        <BSButton Class="btn-outline-secondary" href="@seEvent.seURL">Visit Event Website</BSButton>
         <BSButton Class="btn-outline-primary" OnClick=BackToEventList>Go Back To Event List</BSButton>
     </BSCard>
 }
@@ -37,18 +37,18 @@ else
 
 @code {
     [Parameter]
-    public int? SeId { get; set; }
+    public int? seId { get; set; }
 
     SiteEvent seEvent = new SiteEvent { };
 
     protected override async Task OnParametersSetAsync()
     {
-        if(SeId != null)
+        if(seId != null)
         {
-            seEvent = await SiteEventService.GetOneSiteEvent((int)SeId);
+            seEvent = await SiteEventService.GetOneSiteEvent((int)seId);
             if (seEvent == null)
             {
-                seEvent.SeActive = false;
+                seEvent.seActive = false;
             }
         }
     }

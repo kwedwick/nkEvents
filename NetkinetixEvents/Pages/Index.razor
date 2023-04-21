@@ -8,24 +8,26 @@
     </BSRow>
     <BSRow>
         <BSCol Column="6" Class="color-grey">
-            <div class="mb-3">
-                <BSLabel>Event Title Contains</BSLabel>
-                <BSInput InputType="InputType.Email" placeholder="Event name" Value="@("")" />
-            </div>
-            <div class="mb-3">
-                <BSLabel>Start Date After</BSLabel>
-                <BSInput InputType="InputType.Date" Value="@("")" />
-            </div>
-            <div class="mb-3">
-                <BSLabel>Start Date Before</BSLabel>
-                <BSInput InputType="InputType.Date" Value="@("")" />
-            </div>
-            <div class="mb-3">
-                <BSButton Class="btn btn-primary">Search Events</BSButton>
-            </div>
+            <BSForm Model="searchEvent" OnValidSubmit="@HandleSearch">
+                <div class="mb-3">
+                    <BSLabel for="title">Title</BSLabel>
+                    <BSInput id="title" @bind-Value="searchEvent.seTitle" class="form-control"></BSInput>
+                </div>
+                <div class="mb-3">
+                    <BSLabel for="startDate">Start Date After</BSLabel>
+                    <BSInput id="startDate" InputType="InputType.Date" @bind-Value="searchEvent.seStartDate" />
+                </div>
+                <div class="mb-3">
+                    <BSLabel for="endDate">Start Date Before</BSLabel>
+                    <BSInput id="endDate" InputType="InputType.Date" @bind-Value="searchEvent.seEndDate" />
+                </div>
+                <div class="mb-3">
+                    <BSButton IsSubmit="true" Class="btn btn-primary">Search Events</BSButton>
+                </div>
+            </BSForm>
         </BSCol>
         <BSCol Column="6" Align="Align.Center" Class="text-center">
-            <BSButton Class="btn btn-success">Add New Event</BSButton>
+            <Modal />
         </BSCol>
     </BSRow>
 </BSContainer>
@@ -48,7 +50,7 @@
                         Description
                     </BSTD>
                     <BSTD>
-                        External Site
+                        Edit Event
                     </BSTD>
                 </BSTR>
             </BSTHead>
@@ -57,17 +59,16 @@
                 {
                     <BSTR>
                         <BSTD>
-                            <BSLink @onclick="(() => ShowSeEvent(seEvent.SeId))">@seEvent.SeTitle</BSLink>
+                            <BSLink @onclick="(() => ShowSeEvent(seEvent.seId))">@seEvent.seTitle</BSLink>
                         </BSTD>
                         <BSTD>
-                            @seEvent.SeStartDate.ToString("MM/dd/yyyy")
+                            @seEvent.seStartDate.ToString("MM/dd/yyyy")
                         </BSTD>
                         <BSTD>
-                            @seEvent.SeDescription
+                            @seEvent.seDescription
                         </BSTD>
                         <BSTD>
-                            <BSLink href="@seEvent.SeURL" Target="_blank">Visit Website</BSLink>
-                            
+                            <Modal seId=@seEvent.seId />
                         </BSTD>
                     </BSTR>
                 }
@@ -78,6 +79,9 @@
 
 
 @code {
+
+    EventSearch searchEvent = new EventSearch { };
+
     protected override async Task OnInitializedAsync()
     {
         await SiteEventService.GetAllEvents();
@@ -86,5 +90,17 @@
     void ShowSeEvent(int seId)
     {
         NavigationManager.NavigateTo($"event/{seId}");
+    }
+
+    void EditEvent(int seId)
+    {
+        NavigationManager.NavigateTo($"modal/{seId}");
+    }
+
+
+    async Task HandleSearch()
+    {
+        Console.WriteLine(searchEvent.seTitle);
+        await SiteEventService.SearchEvents(searchEvent);
     }
 }
