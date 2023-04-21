@@ -1,55 +1,72 @@
 ﻿@page "/modal"
 @page "/modal/{seId:int}"
 @inject ISiteEventService SiteEventService
+@using Microsoft.AspNetCore.Components.Forms
 
 <BSButton Class="btn btn-success" Target="@counter">@btnText</BSButton>
 
 <BSModal IsCentered="true" DataId="@counter" HideOnValidSubmit="true">
-    <BSForm Model="seEvent" OnValidSubmit="@HandleSubmit">
+    <BSForm Model="seEvent" OnValidSubmit="OnSubmit" OnReset="OnReset">
+        <DataAnnotationsValidator />
         <BSModalHeader>@btnText</BSModalHeader>
+        <BSCol Position="Position.Relative" ColumnMedium="12">
+            @_message
+            <BSValidationSummary />
+        </BSCol>
         <BSModalContent>
         <div>
             <BSLabel for="title">Title</BSLabel>
-            <BSInput  id="title" @bind-Value="seEvent.seTitle" class="form-control"></BSInput>
+                <BSInput InputType="InputType.Text" id="title" @bind-Value="seEvent.seTitle" class="form-control" ValidateOnInput="true"></BSInput>
+                <BSFeedback For="@(() => seEvent.seTitle)" ValidMessage="Title looks good." />
         </div>
         <div>
             <BSLabel for="description">Description</BSLabel>
             <BSInput id="lastName" @bind-Value="seEvent.seDescription" class="form-control"></BSInput>
+                <BSFeedback For="@(() => seEvent.seDescription)" ValidMessage="Description looks good." />
         </div>
         <div>
             <BSLabel for="startDate">Start Date</BSLabel>
             <BSInput id="startDate" InputType="InputType.Date" @bind-Value="seEvent.seStartDate" />
+                <BSFeedback For="@(() => seEvent.seStartDate)" ValidMessage="Start Date looks good." />
         </div>
         <div>
             <BSLabel for="endDate">End Date</BSLabel>
             <BSInput id="endDate" InputType="InputType.Date" @bind-Value="seEvent.seEndDate" />
+                <BSFeedback For="@(() => seEvent.seEndDate)" ValidMessage="End Date looks good." />
         </div>
             <div>
                 <BSLabel for="location">Location</BSLabel>
                 <BSInput id="location" @bind-Value="seEvent.seLocation" class="form-control"></BSInput>
+                <BSFeedback For="@(() => seEvent.seLocation)" ValidMessage="Location looks good." />
             </div>
             <div>
                 <BSLabel for="url">URL</BSLabel>
                 <BSInput id="url" @bind-Value="seEvent.seURL" class="form-control"></BSInput>
+                <BSFeedback For="@(() => seEvent.seURL)" ValidMessage="URL looks good." />
             </div>
             <div>
-                <BSInputCheckbox @bind-Value="seEvent.seURL" />
-                <BSLabel IsCheckLabel="true">Hide Event</BSLabel>
+                <BSInputCheckbox CheckedValue="@(false)" UnCheckedValue="@(true)" @bind-Value="seEvent.seActive" />
+                <BSLabel IsCheckLabel="false" >Hide Event</BSLabel>
             </div>
         </BSModalContent>
+        <BSModalFooter>
+            <BSButton Target="@counter">Cancel</BSButton>
+            <BSButton IsSubmit="true" Color="BSColor.Primary">@btnText</BSButton>
+            <BSButton Color="BSColor.Danger" IsReset="true">Reset</BSButton>
+        </BSModalFooter>
     </BSForm>
-    <BSModalFooter>
-        <BSButton Target="@counter">Cancel</BSButton>
-        <BSButton IsSubmit="true" Color="BSColor.Primary">@btnText</BSButton>
-    </BSModalFooter>
 </BSModal>
 
 
 @code {
     [Parameter]
     public int? seId { get; set; }
+    [Parameter]
+    public EventCallback<Task> OnClickCallback { get; set; }
+
     string btnText = string.Empty;
     public string counter = "AddEditModal";
+    private string _message = "";
 
     SiteEvent seEvent = new SiteEvent { };
 
@@ -75,12 +92,32 @@
     {
         if (seId == null)
         {
+            Console.WriteLine("This is Create Event");
             seEvent.seId = 0;
+            Console.WriteLine(seEvent.seActive);
             await SiteEventService.CreateSiteEvent(seEvent);
+            await OnClickCallback.InvokeAsync();
         }
         else
         {
+            Console.WriteLine("This is Update Event");
             await SiteEventService.UpdateSiteEvent(seEvent);
+            await OnClickCallback.InvokeAsync();
         }
+    }
+
+    async Task OnSubmit(EditContext e)
+    {
+        if (e.Validate())
+        {
+            _message = "Submitted to database";
+            await HandleSubmit();
+        }
+    }
+
+    private void OnReset(IBSForm bSForm)
+    {
+        _message = "";
+        bSForm.Reset();
     }
 }

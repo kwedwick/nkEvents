@@ -30,7 +30,6 @@ namespace NetkinetixEvents.Services
 
         public async Task CreateSiteEvent(SiteEvent seEvent)
         {
-            Console.WriteLine(seEvent.ToString());
             var json = JsonConvert.SerializeObject(seEvent);
             var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
             Console.WriteLine(stringContent);
@@ -39,8 +38,8 @@ namespace NetkinetixEvents.Services
 
             if (responseString != null)
             {
-                List<SiteEvent> tempList = JsonConvert.DeserializeObject<List<SiteEvent>>(responseString);
-                seEvents = tempList;
+                var result = await _http.GetFromJsonAsync<List<SiteEvent>>($"{apiURl}/List");
+                seEvents = result;
             }
         }
 
@@ -90,12 +89,12 @@ namespace NetkinetixEvents.Services
             var json = JsonConvert.SerializeObject(seEvent);
             var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
             Console.WriteLine(stringContent);
-            var response = await _http.PatchAsync($"{apiURl}/Set", stringContent);
+            var response = await _http.PostAsync($"{apiURl}/Set", stringContent);
             var responseString = await response.Content.ReadAsStringAsync();
-
             if (responseString != null)
             {
-                seEvents = JsonConvert.DeserializeObject<List<SiteEvent>>(responseString);
+                var result = await _http.GetFromJsonAsync<List<SiteEvent>>($"{apiURl}/List");
+                seEvents = result;
             }
         }
 

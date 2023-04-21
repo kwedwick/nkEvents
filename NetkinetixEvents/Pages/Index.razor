@@ -68,7 +68,7 @@
                             @seEvent.seDescription
                         </BSTD>
                         <BSTD>
-                            <Modal seId=@seEvent.seId />
+                            <Modal seId=@seEvent.seId OnClickCallback="@refreshList" />
                         </BSTD>
                     </BSTR>
                 }
@@ -92,11 +92,10 @@
         NavigationManager.NavigateTo($"event/{seId}");
     }
 
-    void EditEvent(int seId)
+    public async Task refreshList()
     {
-        NavigationManager.NavigateTo($"modal/{seId}");
+        await SiteEventService.GetAllEvents();
     }
-
 
     async Task HandleSearch()
     {
