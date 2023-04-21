@@ -59,7 +59,7 @@
                 {
                     <BSTR>
                         <BSTD>
-                            <BSLink @onclick="(() => ShowSeEvent(seEvent.seId))">@seEvent.seTitle</BSLink>
+                            <BSLink role="button" @onclick="(() => ShowSeEvent(seEvent.seId))">@seEvent.seTitle</BSLink>
                         </BSTD>
                         <BSTD>
                             @seEvent.seStartDate.ToString("MM/dd/yyyy")

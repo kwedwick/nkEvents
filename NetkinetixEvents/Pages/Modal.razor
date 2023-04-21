@@ -81,10 +81,6 @@
         {
             counter += seId;
             seEvent = await SiteEventService.GetOneSiteEvent((int)seId);
-            if (seEvent == null)
-            {
-                seEvent.seActive = true;
-            }
         }
     }
 

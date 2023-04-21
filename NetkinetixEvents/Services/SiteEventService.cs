@@ -32,7 +32,7 @@ namespace NetkinetixEvents.Services
         {
             var json = JsonConvert.SerializeObject(seEvent);
             var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-            Console.WriteLine(stringContent);
+
             var response = await _http.PostAsync($"{apiURl}/Set", stringContent);
             var responseString = await response.Content.ReadAsStringAsync();
 
@@ -72,7 +72,7 @@ namespace NetkinetixEvents.Services
                 }
                 else
                 {
-                    return new SiteEvent { };
+                    return null;
                 }
                 
             }
@@ -85,10 +85,10 @@ namespace NetkinetixEvents.Services
 
         public async Task UpdateSiteEvent(SiteEvent seEvent)
         {
-            Console.WriteLine(seEvent.ToString());
+
             var json = JsonConvert.SerializeObject(seEvent);
             var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
-            Console.WriteLine(stringContent);
+
             var response = await _http.PostAsync($"{apiURl}/Set", stringContent);
             var responseString = await response.Content.ReadAsStringAsync();
             if (responseString != null)
